@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %> <!-- Render list title using EJS -->
+        </h1>
+    </div>
+
+    <div class="box">
+        <% for (var i = 0; i < listItems.length; i++) { %> <!-- Loop through listItems using EJS -->
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= listItems[i] %> <!-- Render each list item using EJS -->
+                </p>
+            </div>
+        <% } %>
+
+        <form class="item" action="/" method="post"> <!-- Form to add new items -->
+            <input type="text" name="newTodo" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="listSubmit" value="<%= listTitle %>">+</button> <!-- Submit button -->
+        </form>
+    </div>
+
+</body>
+
+<footer>
+    Nikhil Singh
+</footer>
+
+</html>
